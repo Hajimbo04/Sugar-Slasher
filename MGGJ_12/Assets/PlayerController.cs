@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
         
+        // deadzone check
+        if (Mathf.Abs(moveX) < 0.1f) moveX = 0f;
+        if (Mathf.Abs(moveY) < 0.1f) moveY = 0f;
+        
         Vector3 moveDirection = new Vector3(moveX, 0.0f, moveY).normalized;
         
         transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
