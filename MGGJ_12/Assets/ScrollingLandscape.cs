@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class ScrollingLandscape : MonoBehaviour
 {
-    public float scrollSpeed = 5f;
+    public float scrollSpeed = 5.0f;
+    
     
     
     
@@ -15,6 +16,6 @@ public class ScrollingLandscape : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector3.back * scrollSpeed * Time.deltaTime, Space.World);
     }
 }
