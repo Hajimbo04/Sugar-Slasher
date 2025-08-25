@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &302632823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 302632824}
+  m_Layer: 0
+  m_Name: BulletSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &302632824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302632823}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.005151309, z: -0, w: 0.99998677}
+  m_LocalPosition: {x: 0.018658608, y: 0.40000153, z: 0.42024964}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1394478316}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &350707883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -537,12 +568,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a6ae6eb61d3b41442971241c8f4fdb8a, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: a6ae6eb61d3b41442971241c8f4fdb8a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1972701908}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: a6ae6eb61d3b41442971241c8f4fdb8a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 302632824}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6ae6eb61d3b41442971241c8f4fdb8a, type: 3}
       insertIndex: -1
@@ -553,6 +591,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6ae6eb61d3b41442971241c8f4fdb8a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1394478317}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6ae6eb61d3b41442971241c8f4fdb8a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1394478318}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6ae6eb61d3b41442971241c8f4fdb8a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1394478319}
   m_SourcePrefab: {fileID: 100100000, guid: a6ae6eb61d3b41442971241c8f4fdb8a, type: 3}
 --- !u!1 &1394478313 stripped
 GameObject:
@@ -612,6 +656,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c2b8f1cdd50544daae6af5158c8e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1394478318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394478313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae000d7f1021084e9aac41cdbd30d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1556474352248171998, guid: f7bcfa1ae3cc1b24ba5c1eaf52543fb6, type: 3}
+  bulletSpawner: {fileID: 302632824}
+  bulletSpeed: 20
+  bulletLifetime: 2
+  fireRate: 0.2
+--- !u!114 &1394478319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394478313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a7a165fa3ce3164a82aaa7b50b1d5c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1556474352248171998, guid: f7bcfa1ae3cc1b24ba5c1eaf52543fb6, type: 3}
+  bulletSpawner: {fileID: 302632824}
+  bulletSpeed: 20
+  bulletLifetime: 2
+  fireRate: 0.5
 --- !u!1 &1890207548 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 88178e243f31ff4469d1b13d29268b0f, type: 3}
