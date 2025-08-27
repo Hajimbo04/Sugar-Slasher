@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Merged_Scene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 6af146c6acef097498089b4222715984
+  - enabled: 1
+    path: Assets/Scenes/Joyce_Scene.unity
+    guid: 9c97998fda11f0149965a178c4a703c1
+  - enabled: 1
+    path: Assets/Scenes/Justin_Scene.unity
+    guid: 4af6d03f556cd53499ce9cd03e2c279f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
