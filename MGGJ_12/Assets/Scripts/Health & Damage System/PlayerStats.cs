@@ -39,6 +39,6 @@ public class PlayerStats : MonoBehaviour
     {
         Debug.Log("Player died :p");
 
-        sceneLoader.LoadGameScene();
+        sceneLoader.LoadGameOver();
     }
 }

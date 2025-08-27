@@ -38,12 +38,19 @@ public class EnemyFollow : MonoBehaviour
         bulletTime -= Time.deltaTime;
 
         if (bulletTime > 0) return;
-
         bulletTime = timer;
 
-        GameObject bulletObj = Instantiate(enemyBullet, spawnPoint.position, spawnPoint.rotation);
+        GameObject bulletObj = Instantiate(enemyBullet, spawnPoint.position, Quaternion.identity); // for bullet to spawn at spawnpoint
+        Vector3 shootDir = (player.position - spawnPoint.position).normalized; // direct to player
+
         Rigidbody bulletRig = bulletObj.GetComponent<Rigidbody>();
-        bulletRig.AddForce(spawnPoint.forward * bulletSpeed);
+        if (bulletRig != null)
+        {
+            bulletRig.AddForce(shootDir * bulletSpeed);
+        }
+
         Destroy(bulletObj, 5f);
     }
+
+
 }

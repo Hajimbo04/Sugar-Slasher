@@ -9,4 +9,9 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Joyce_Scene");
     }
 
+    public void LoadGameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
+
 }
