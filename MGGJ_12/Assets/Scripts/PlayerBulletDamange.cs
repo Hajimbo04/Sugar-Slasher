@@ -11,6 +11,7 @@ public class PlayerBullet : MonoBehaviour
         {
             AttributesManager atm = other.GetComponent<AttributesManager>();
             atm.TakeDamage(damage);
+            Debug.Log("-30 hp")
 
             if (atm.health <= 0)
             {
