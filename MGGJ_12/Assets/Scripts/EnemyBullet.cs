@@ -7,12 +7,12 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject, 10f);
     }
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.tag == "Player")
         {
             other.GetComponent<PlayerStats>().TakeDamage(damage);
-            Debug.Log("Healed");
+            
             Destroy(gameObject);
         }
     }
