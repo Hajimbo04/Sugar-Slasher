@@ -150,3 +150,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  hitShakeData: {fileID: 11400000, guid: de4d8ba94f097634f97c2ef8d5a1f7d5, type: 2}
