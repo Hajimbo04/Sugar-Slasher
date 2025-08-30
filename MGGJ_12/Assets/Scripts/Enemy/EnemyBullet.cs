@@ -1,7 +1,10 @@
+using FirstGearGames.SmoothCameraShaker;
 using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float damage;
+
+    public ShakeData hitShakeData;
 
     private void Start()
     {
@@ -11,7 +14,9 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            CameraShakerHandler.Shake(hitShakeData);
             other.GetComponent<PlayerStats>().TakeDamage(damage);
+            
             
             Destroy(gameObject);
         }
