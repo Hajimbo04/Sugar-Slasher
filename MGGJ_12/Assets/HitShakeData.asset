@@ -19,18 +19,18 @@ MonoBehaviour:
   _iterationPercent: 1
   _unlimitedDuration: 0
   _totalDuration: 1
-  _fadeInDuration: 0.5
+  _fadeInDuration: 0
   _fadeOutDuration: 0.5
-  _magnitude: 1
-  _magnitudeNoise: 0.1
+  _magnitude: 3
+  _magnitudeNoise: 0.439
   _magnitudeCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -47,16 +47,16 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _roughness: 7.5
+  _roughness: 200
   _roughnessNoise: 0.3
   _roughnessCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
