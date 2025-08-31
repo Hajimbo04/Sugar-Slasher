@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5.0f; // movement speed
+    public float speed = 10.0f; // movement speed
     
     public float tiltAngle = 30.0f; // how much the plane tilts 
     public float tiltSpeed = 5.0f; // how fast the plane tilts
 
+    public float parryRadius = 5f;
+    public float parryCooldown = 2f;
+    public GameObject parryEffectPrefab;
+
+    private float parryTimer = 0f;
     private Camera mainCam;
     private float camToPlayerDist;
     
@@ -42,16 +47,61 @@ public class PlayerController : MonoBehaviour
         
         transform.position = pos;
         
-        // tilt player
+        
         float targetTilt = -moveX * tiltAngle;
 
         Quaternion currentRotation = transform.rotation;
         Quaternion targetRotation = Quaternion.Euler(0f, 0f, targetTilt);
         
-        // smoothly tilts towards target direction
         transform.rotation = Quaternion.Lerp(
             currentRotation,
             targetRotation,
             Time.deltaTime * tiltSpeed);
+
+        if (parryTimer > 0)
+            parryTimer -= Time.deltaTime;
+        
+        if (Input.GetKeyDown(KeyCode.F) && parryTimer <= 0f)
+        {
+            Parry();
+        }
+    }
+
+    void Parry()
+    {
+        if (parryEffectPrefab != null)
+        {
+            parryEffectPrefab.SetActive(true);
+            parryEffectPrefab.transform.localPosition = new Vector3(0f, 0f, -1f);
+            parryEffectPrefab.transform.localScale = Vector3.one * parryRadius;
+        }
+        Invoke("DisableParryEffect", 0.3f);
+
+        
+        Collider[] hits = Physics.OverlapSphere(transform.position, parryRadius);
+        foreach (Collider hit in hits)
+        {
+            Bullet bullet = hit.GetComponent<Bullet>();
+            if (bullet != null && bullet.isParriable && bullet.owner != null)
+            {
+                Vector3 directionToEnemy = (bullet.owner.transform.position - bullet.transform.position).normalized;
+                bullet.transform.forward = directionToEnemy;
+                
+                Rigidbody rb = bullet.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    float speed = rb.linearVelocity.magnitude;
+                    rb.linearVelocity = directionToEnemy * speed;
+                }
+                bullet.isParriable = false;
+            }
+        }
+        parryTimer = parryCooldown;
+    }
+    
+    void DisableParryEffect()
+    {
+        if (parryEffectPrefab != null)
+            parryEffectPrefab.SetActive(false); // hide barrier
     }
 }

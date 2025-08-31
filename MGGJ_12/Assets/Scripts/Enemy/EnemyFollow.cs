@@ -13,6 +13,14 @@ public class EnemyFollow : MonoBehaviour
     public Transform spawnPoint;
     public float bulletSpeed = 500f;
 
+    void Start()
+    {
+        if (player == null)
+        {
+            player = GameObject.FindWithTag("Player").transform;
+        }
+    }
+
     void Update()
     {
         FollowPlayer();
@@ -40,13 +48,14 @@ public class EnemyFollow : MonoBehaviour
         if (bulletTime > 0) return;
         bulletTime = timer;
 
-        GameObject bulletObj = Instantiate(enemyBullet, spawnPoint.position, Quaternion.identity); // for bullet to spawn at spawnpoint
-        Vector3 shootDir = (player.position - spawnPoint.position).normalized; // direct to player
+        Vector3 shootDir = (player.position - spawnPoint.position).normalized;
+        Quaternion rotation = Quaternion.LookRotation(shootDir);
+        GameObject bulletObj = Instantiate(enemyBullet, spawnPoint.position, rotation);
 
         Rigidbody bulletRig = bulletObj.GetComponent<Rigidbody>();
         if (bulletRig != null)
         {
-            bulletRig.AddForce(shootDir * bulletSpeed);
+            bulletRig.linearVelocity = shootDir * bulletSpeed;
         }
 
         Destroy(bulletObj, 5f);
