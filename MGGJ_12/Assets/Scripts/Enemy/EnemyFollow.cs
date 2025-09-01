@@ -32,13 +32,11 @@ public class EnemyFollow : MonoBehaviour
     {
         if (player == null) return;
 
-        // Move toward the player
         transform.position = Vector3.MoveTowards(
             transform.position,
             player.position,
             moveSpeed * Time.deltaTime);
 
-        // Rotate to face the player
         transform.LookAt(player);
     }
 
@@ -62,7 +60,7 @@ public class EnemyFollow : MonoBehaviour
         Bullet bulletScript = bulletObj.GetComponent<Bullet>();
         if (bulletScript != null)
         {
-            bulletScript.owner = this.gameObject; // <--- important for reflection
+            bulletScript.owner = this.gameObject; 
         }
 
         Destroy(bulletObj, 5f);

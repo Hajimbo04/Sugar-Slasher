@@ -12,7 +12,7 @@ public class AttributesManager : MonoBehaviour
         health -= amount;
         Debug.Log($"{gameObject.name} now has {health} HP.");
         
-        if (health <= 0) // ✅ check if enemy is dead
+        if (health <= 0) 
         {
             Die();
         }

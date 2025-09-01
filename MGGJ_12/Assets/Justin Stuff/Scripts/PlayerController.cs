@@ -15,20 +15,17 @@ public class PlayerController : MonoBehaviour
     private Camera mainCam;
     private float camToPlayerDist;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        mainCam = Camera.main; // get main camera
+        mainCam = Camera.main; 
         camToPlayerDist = Mathf.Abs(mainCam.transform.position.y - transform.position.y);
     }
 
-    // Update is called once per frame
     void Update()
     {
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
         
-        // deadzone check
         if (Mathf.Abs(moveX) < 0.1f) moveX = 0f;
         if (Mathf.Abs(moveY) < 0.1f) moveY = 0f;
         
@@ -36,9 +33,8 @@ public class PlayerController : MonoBehaviour
         
         transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
         
-        Vector3 pos = transform.position; // clamp to to camera view
+        Vector3 pos = transform.position; 
         
-        // convert camera edges to world positions
         Vector3 minScreenBounds = mainCam.ViewportToWorldPoint(new Vector3(0, 0, camToPlayerDist));
         Vector3 maxScreenBounds = mainCam.ViewportToWorldPoint(new Vector3(1, 1, camToPlayerDist));
         
@@ -113,6 +109,6 @@ public class PlayerController : MonoBehaviour
     void DisableParryEffect()
     {
         if (parryEffectPrefab != null)
-            parryEffectPrefab.SetActive(false); // hide barrier
+            parryEffectPrefab.SetActive(false); 
     }
 }
