@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 10.0f; // movement speed
+    public float speed = 50.0f; // movement speed
     
     public float tiltAngle = 30.0f; // how much the plane tilts 
     public float tiltSpeed = 5.0f; // how fast the plane tilts
 
     public float parryRadius = 5f;
-    public float parryCooldown = 2f;
+    public float parryCooldown = 1f;
     public GameObject parryEffectPrefab;
 
     private float parryTimer = 0f;
@@ -84,15 +84,26 @@ public class PlayerController : MonoBehaviour
             Bullet bullet = hit.GetComponent<Bullet>();
             if (bullet != null && bullet.isParriable && bullet.owner != null)
             {
-                Vector3 directionToEnemy = (bullet.owner.transform.position - bullet.transform.position).normalized;
-                bullet.transform.forward = directionToEnemy;
-                
                 Rigidbody rb = bullet.GetComponent<Rigidbody>();
                 if (rb != null)
                 {
+                    EnemyFollow enemyScript = bullet.owner.GetComponent <EnemyFollow>();
+                    Vector3 directionToEnemy;
+                    
+                    if (enemyScript != null && enemyScript.targetPoint != null)
+                    {
+                        directionToEnemy = (enemyScript.targetPoint.position - bullet.transform.position).normalized;
+                    }
+                    else
+                    {
+                        directionToEnemy = (bullet.owner.transform.position - bullet.transform.position).normalized;
+                    }
+                    
                     float speed = rb.linearVelocity.magnitude;
                     rb.linearVelocity = directionToEnemy * speed;
                 }
+                bullet.owner = gameObject;
+                bullet.damage *= 2;
                 bullet.isParriable = false;
             }
         }

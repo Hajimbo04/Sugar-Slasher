@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411e5bc435bccd944ba2c347fe8039d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 50
   isParriable: 0
   owner: {fileID: 5372856572316070622, guid: 839f72cc029627b4788c41a833a9b5d1, type: 3}
   initialVelocity: {x: 0, y: 0, z: 0}

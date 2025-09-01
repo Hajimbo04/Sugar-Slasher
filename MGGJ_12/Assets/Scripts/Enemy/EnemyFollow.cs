@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyFollow : MonoBehaviour
 {
     public Transform player;
+    public Transform targetPoint;
     public float moveSpeed = 5f;
 
     [SerializeField] private float timer = 5f;
@@ -56,6 +57,12 @@ public class EnemyFollow : MonoBehaviour
         if (bulletRig != null)
         {
             bulletRig.linearVelocity = shootDir * bulletSpeed;
+        }
+        
+        Bullet bulletScript = bulletObj.GetComponent<Bullet>();
+        if (bulletScript != null)
+        {
+            bulletScript.owner = this.gameObject; // <--- important for reflection
         }
 
         Destroy(bulletObj, 5f);

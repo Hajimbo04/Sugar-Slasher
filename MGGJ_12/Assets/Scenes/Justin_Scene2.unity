@@ -1286,6 +1286,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6ae6eb61d3b41442971241c8f4fdb8a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1394478321}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6ae6eb61d3b41442971241c8f4fdb8a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1394478322}
   m_SourcePrefab: {fileID: 100100000, guid: a6ae6eb61d3b41442971241c8f4fdb8a, type: 3}
 --- !u!1 &1394478313 stripped
 GameObject:
@@ -1304,7 +1307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a91f7665977c749883bb991d235862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 20
   tiltAngle: 45
   tiltSpeed: 5
   parryRadius: 5
@@ -1411,6 +1414,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   attack: 10
+--- !u!54 &1394478322
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394478313}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1539438355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,10 +1620,6 @@ PrefabInstance:
     - target: {fileID: 5372856572316070622, guid: 839f72cc029627b4788c41a833a9b5d1, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7092542454187552321, guid: 839f72cc029627b4788c41a833a9b5d1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -36
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
