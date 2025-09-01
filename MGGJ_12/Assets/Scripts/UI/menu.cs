@@ -20,6 +20,11 @@ public class menu : MonoBehaviour
     }
     public void startGame()
     {
+        StartCoroutine(LoadSceneWithDelay());
+    }
+	IEnumerator LoadSceneWithDelay()
+    {
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(sceneName);
     }
 	public void optionsMenu()
