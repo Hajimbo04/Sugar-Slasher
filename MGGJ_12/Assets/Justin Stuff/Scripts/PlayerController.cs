@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public float parryCooldown = 1f;
     public GameObject parryEffectPrefab;
 
-    private float parryTimer = 0f;
+    [SerializeField] private float parryTimer = 0f;
     private Camera mainCam;
     private float camToPlayerDist;
     
@@ -73,7 +73,6 @@ public class PlayerController : MonoBehaviour
         }
         Invoke("DisableParryEffect", 0.3f);
 
-        
         Collider[] hits = Physics.OverlapSphere(transform.position, parryRadius);
         foreach (Collider hit in hits)
         {
@@ -83,9 +82,9 @@ public class PlayerController : MonoBehaviour
                 Rigidbody rb = bullet.GetComponent<Rigidbody>();
                 if (rb != null)
                 {
-                    EnemyFollow enemyScript = bullet.owner.GetComponent <EnemyFollow>();
+                    EnemyFollow enemyScript = bullet.owner.GetComponent<EnemyFollow>();
                     Vector3 directionToEnemy;
-                    
+
                     if (enemyScript != null && enemyScript.targetPoint != null)
                     {
                         directionToEnemy = (enemyScript.targetPoint.position - bullet.transform.position).normalized;
@@ -94,7 +93,7 @@ public class PlayerController : MonoBehaviour
                     {
                         directionToEnemy = (bullet.owner.transform.position - bullet.transform.position).normalized;
                     }
-                    
+
                     float speed = rb.linearVelocity.magnitude;
                     rb.linearVelocity = directionToEnemy * speed;
                 }

@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
 
         healthBar.SetSliderMax(maxHealth);
     }
+
     private void Update()
     {
         if (currentHealth > maxHealth)
