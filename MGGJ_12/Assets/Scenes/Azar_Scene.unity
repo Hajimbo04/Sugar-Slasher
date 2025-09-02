@@ -2166,6 +2166,7 @@ GameObject:
   - component: {fileID: 1352755903}
   - component: {fileID: 1352755906}
   - component: {fileID: 1352755907}
+  - component: {fileID: 1352755908}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2306,6 +2307,20 @@ MonoBehaviour:
   target: {fileID: 1394478316}
   followFactor: 0.4
   smoothSpeed: 0.125
+--- !u!114 &1352755908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352755902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe42e39f0c6a8b48b48304acb60995a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1352755905}
+  useLocalSpace: 1
 --- !u!1001 &1394478312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2537,6 +2552,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  cameraShake: {fileID: 1352755908}
+  shakeDuration: 0.12
+  shakeIntensityPerDamage: 0.06
   healthBar: {fileID: 1251136036}
   sceneLoader: {fileID: 992752246}
 --- !u!114 &1394478321
