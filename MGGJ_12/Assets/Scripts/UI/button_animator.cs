@@ -42,9 +42,16 @@ public class ButtonAnimator : MonoBehaviour
     
     void OnHover(int index)
     {
-        if (buttonCoroutines[index] != null)
-            StopCoroutine(buttonCoroutines[index]);
-        buttonCoroutines[index] = StartCoroutine(ScaleButton(buttons[index], originalScales[index] * hoverScale));
+        for (int i = 0; i < buttonCoroutines.Length; i++)
+        {
+            if (buttonCoroutines[i] != null)
+                StopCoroutine(buttonCoroutines[i]);
+                
+            if (i == index)
+                buttonCoroutines[i] = StartCoroutine(ScaleButton(buttons[i], originalScales[i] * hoverScale));
+            else
+                buttonCoroutines[i] = StartCoroutine(ScaleButton(buttons[i], originalScales[i]));
+        }
     }
     
     void OnExit(int index)
