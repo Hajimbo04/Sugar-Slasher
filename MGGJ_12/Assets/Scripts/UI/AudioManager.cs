@@ -10,6 +10,22 @@ public class AudioManager : MonoBehaviour
 	public AudioClip mainMenuBg;
 	public AudioClip button;
 	public AudioClip gameOverBg;
+	public AudioClip gameSceneBg;
+	
+	public static AudioManager instance;
+	
+	private void Awake()
+	{
+		if (instance == null)
+		{
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
+	}
 	
 	private void Start()
 	{

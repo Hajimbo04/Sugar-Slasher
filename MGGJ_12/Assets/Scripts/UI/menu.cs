@@ -33,6 +33,7 @@ public class menu : MonoBehaviour
     {
         audioManager.PlaySFX(audioManager.button);
         StartCoroutine(LoadSceneWithFade());
+		audioManager.PlayMusic(audioManager.gameSceneBg);
     }
 
     IEnumerator LoadSceneWithFade()
