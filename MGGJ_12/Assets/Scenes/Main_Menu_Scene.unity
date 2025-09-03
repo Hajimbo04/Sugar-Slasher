@@ -1685,7 +1685,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -355, y: -399}
+  m_AnchoredPosition: {x: -355, y: -411}
   m_SizeDelta: {x: 893, y: 82.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &739987604
@@ -4059,6 +4059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2011808450}
   - component: {fileID: 2011808449}
+  - component: {fileID: 2011808451}
   m_Layer: 0
   m_Name: UI Manager
   m_TagString: Untagged
@@ -4098,6 +4099,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2011808451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011808448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b0ee2da50c32ac4cbf54473951ca709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 1412371649}
+  - {fileID: 1747372046}
+  - {fileID: 1355263849}
+  - {fileID: 635963272}
+  - {fileID: 739987602}
+  hoverScale: 1.1
+  animationSpeed: 5
 --- !u!1 &2054293987
 GameObject:
   m_ObjectHideFlags: 0
