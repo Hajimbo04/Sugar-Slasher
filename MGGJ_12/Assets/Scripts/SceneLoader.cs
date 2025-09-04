@@ -24,7 +24,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadGameScene()
     {
 		//audioManager.PlaySFX(audioManager.button);
-		audioManager.PlayMusic(audioManager.gameSceneBg);
+		//audioManager.PlayMusic(audioManager.gameSceneBg);
 		sceneToLoad = sceneName1;
 		StartCoroutine(LoadSceneWithFade());
     }

@@ -11,6 +11,9 @@ public class EnemyStats : AttributesManager
     protected override void Die()
     {
 
+
+        ScoreManager.Instance.AddScore(100);
+
         if (healthPickupPrefab != null && Random.value <= dropChance)
         {
             Instantiate(healthPickupPrefab, transform.position, Quaternion.identity);
