@@ -13,7 +13,7 @@ public class SceneLoader : MonoBehaviour
 	
 	private void Awake()
 	{
-		audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+		//audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 	}
 	
 	void Start()
@@ -23,7 +23,7 @@ public class SceneLoader : MonoBehaviour
 	
     public void LoadGameScene()
     {
-		audioManager.PlaySFX(audioManager.button);
+		//audioManager.PlaySFX(audioManager.button);
 		audioManager.PlayMusic(audioManager.gameSceneBg);
 		sceneToLoad = sceneName1;
 		StartCoroutine(LoadSceneWithFade());
@@ -39,7 +39,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadGameOver()
     {
         SceneManager.LoadScene("GameOver");
-		audioManager.PlayMusic(audioManager.gameOverBg);
+		//audioManager.PlayMusic(audioManager.gameOverBg);
     }
 	
 	IEnumerator LoadSceneWithFade()
