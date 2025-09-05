@@ -8,9 +8,14 @@ public class AudioManager : MonoBehaviour
 	
 	[Header("---------Audio Clip---------")]
 	public AudioClip mainMenuBg;
-	public AudioClip button;
 	public AudioClip gameOverBg;
 	public AudioClip gameSceneBg;
+	public AudioClip bossEntry;
+	public AudioClip button;
+	public AudioClip collectable;
+	public AudioClip enemyProjectile;
+	public AudioClip projectile;
+	public AudioClip explosion;
 	
 	public static AudioManager instance;
 	
