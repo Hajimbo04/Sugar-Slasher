@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AttributesManager : MonoBehaviour
@@ -11,8 +9,8 @@ public class AttributesManager : MonoBehaviour
     {
         health -= amount;
         Debug.Log($"{gameObject.name} now has {health} HP.");
-        
-        if (health <= 0) 
+
+        if (health <= 0)
         {
             Die();
         }
@@ -26,10 +24,10 @@ public class AttributesManager : MonoBehaviour
             atm.TakeDamage(attack);
         }
     }
-    
-    private void Die()
+
+    protected virtual void Die() // <- make virtual so subclasses can override
     {
-        Debug.Log($"{gameObject.name} has died."); 
-        Destroy(gameObject); 
+        Debug.Log($"{gameObject.name} has died.");
+        Destroy(gameObject);
     }
 }
