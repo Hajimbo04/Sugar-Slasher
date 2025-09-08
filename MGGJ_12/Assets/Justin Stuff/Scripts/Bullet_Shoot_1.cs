@@ -8,6 +8,8 @@ public class Bullet_Shoot_1 : MonoBehaviour
     public float bulletSpeed = 20f;      // Speed of the bullet
     public float bulletLifetime = 2f;    // Time before bullet despawns
 
+    public GameObject muzzleFlashVFX;
+
     [Header("Shooting Settings")]
     public float fireRate = 0.2f;        // Delay between shots
     private float nextFireTime = 0f;     // Time until next shot allowed
@@ -24,8 +26,20 @@ public class Bullet_Shoot_1 : MonoBehaviour
 
     void ShootBullet()
     {
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlaySFX(AudioManager.instance.projectile);
+        }
         // Instantiate bullet at the spawner position and rotation
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
+
+        if (muzzleFlashVFX != null)
+        {
+            // Instantiate the VFX at the same position and rotation as the bullet.
+            // A common practice is to destroy the VFX after a short duration.
+            GameObject flash = Instantiate(muzzleFlashVFX, bulletSpawner.position, bulletSpawner.rotation);
+            Destroy(flash, 1f); // Adjust the lifetime as needed for your effect.
+        }
 
         // Get Rigidbody component
         Rigidbody rb = bullet.GetComponent<Rigidbody>();

@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement; // <-- You need this for SceneManager
+
 
 public class PlayerStats : MonoBehaviour
 {
@@ -7,10 +9,12 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float shakeDuration = 0.12f;
     [SerializeField] private float shakeIntensityPerDamage = 0.02f;
 
+    public GameObject damageVFX;
+
     public HealthBar healthBar;
     private float currentHealth;
 
-    public SceneLoader sceneLoader;
+    public string gameOverSceneName = "GameOver";
 
     private void Start()
     {
@@ -29,6 +33,16 @@ public class PlayerStats : MonoBehaviour
         currentHealth -= amount;
         healthBar.SetSlider(currentHealth);
         if (cameraShake) cameraShake.Shake(amount * shakeIntensityPerDamage, shakeDuration);
+        // Check if a VFX prefab has been assigned.
+        if (damageVFX != null)
+        {
+            // Instantiate the VFX at the player's position.
+            GameObject vfx = Instantiate(damageVFX, transform.position, Quaternion.identity);
+
+            // It's good practice to destroy the VFX after it's finished playing.
+            Destroy(vfx, 2f); // Adjust the lifetime as needed.
+        }
+
     }
 
     public void HealPlayer(float amount)
@@ -40,6 +54,6 @@ public class PlayerStats : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player died :p");
-        sceneLoader.LoadGameOver();
+        SceneManager.LoadScene(gameOverSceneName);
     }
 }

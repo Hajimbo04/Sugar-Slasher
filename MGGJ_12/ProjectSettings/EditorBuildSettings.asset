@@ -9,21 +9,27 @@ EditorBuildSettings:
     path: Assets/Scenes/Main_Menu_Scene.unity
     guid: f17d602e0096d754db76f31259c99794
   - enabled: 1
-    path: Assets/Scenes/Merged_Scene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Game_Scene.unity
+    guid: 01bd0255a6feef849864ee59b146b2ad
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 6af146c6acef097498089b4222715984
   - enabled: 1
+    path: Assets/Scenes/GameWin.unity
+    guid: 1cbfcc8909605944692b2c0995358e79
+  - enabled: 0
+    path: Assets/Scenes/Merged_Scene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
     path: Assets/Scenes/Joyce_Scene.unity
     guid: 9c97998fda11f0149965a178c4a703c1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Justin_Scene.unity
     guid: 4af6d03f556cd53499ce9cd03e2c279f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Azar_Scene.unity
     guid: b977cb38ebcd3c644991617945d80dff
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Azar_Scene2 (Duplicated by Joyce).unity
     guid: ceb440b77e945db4990e47c8e2e61395
   m_configObjects:

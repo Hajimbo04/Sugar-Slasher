@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 4183292856367278392}
   - component: {fileID: 3594583272187181996}
   - component: {fileID: 2618552218221031493}
+  - component: {fileID: 3828219314669199803}
   m_Layer: 0
   m_Name: HealItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4881465644971114239
 Transform:
   m_ObjectHideFlags: 0
@@ -150,3 +151,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!225 &3828219314669199803
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4776778391277241273}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

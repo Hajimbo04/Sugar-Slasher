@@ -1545,7 +1545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a04abc35879384a8511632e716fc9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName1: Azar_Scene
+  sceneName1: Game_Scene
   sceneName2: Main_Menu_Scene
   fadeManager: {fileID: 126510753}
 --- !u!4 &1825087269
