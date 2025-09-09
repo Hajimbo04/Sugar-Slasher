@@ -15,6 +15,13 @@ public class PlayerStats : MonoBehaviour
     private float currentHealth;
 
     public string gameOverSceneName = "GameOver";
+	
+	AudioManager audioManager;
+	
+	private void Awake()
+	{
+		audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+	}
 
     private void Start()
     {
@@ -55,5 +62,6 @@ public class PlayerStats : MonoBehaviour
     {
         Debug.Log("Player died :p");
         SceneManager.LoadScene(gameOverSceneName);
+		audioManager.PlayMusic(audioManager.gameOverBg);
     }
 }
